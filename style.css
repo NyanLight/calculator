@@ -24,10 +24,12 @@ main {
     flex-direction: column;
     background-color: grey;
     font-family: 'Orbitron', sans-serif;
+    padding: 0.7rem;
 }
 
 #display{
     background-color: #2e2e2d;
+    border-radius: 0.5rem;
     color: whitesmoke;
     padding: 1rem;
     text-align: right;
