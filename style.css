@@ -4,9 +4,25 @@
 
 body{
     background-color: beige;
+    display: flex;
+    flex-direction: column;
 }
 
-.container{
-    height: 900px;
-    width: 420px;
+
+
+#container{
+    height: 460px;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-top: black dashed 1px;
+
 }
