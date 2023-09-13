@@ -1,0 +1,12 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: beige;
+}
+
+.container{
+    height: 900px;
+    width: 420px;
+}
