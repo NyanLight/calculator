@@ -9,6 +9,13 @@ body{
 }
 
 
+main {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 14rem;
+    padding-top: 5rem;
+}
+
 
 #container{
     height: 460px;
@@ -16,6 +23,15 @@ body{
     display: flex;
     flex-direction: column;
     background-color: grey;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#display{
+    background-color: #2e2e2d;
+    color: whitesmoke;
+    padding: 1rem;
+    text-align: right;
+    
 }
 
 footer{
@@ -23,6 +39,11 @@ footer{
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    padding-top: 1rem;
     border-top: black dashed 1px;
+    font-family: 'Ubuntu', sans-serif;
+}
 
+#logo {
+    height: 4rem;
 }
