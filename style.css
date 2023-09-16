@@ -28,6 +28,7 @@ main {
 }
 
 #display{
+    height: 55px;
     background-color: #2e2e2d;
     border-radius: 0.5rem;
     color: whitesmoke;
