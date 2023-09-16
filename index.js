@@ -11,9 +11,9 @@ let display = document.querySelector("#display");
 const cancelButton = document.querySelector("#cButton");
 cancelButton.addEventListener('click', () => {
   displayValue = 0;
-  display.textContent = '';
+  display.textContent = displayValue;
+  firstNumber = '';
 })
-
 
 const cancelEntryButton = document.querySelector("#ceButton");
 
