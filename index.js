@@ -2,7 +2,7 @@
 
 let firstNumber;
 let secondNumber;
-let operator;
+let operator = "";
 let displayValue = 0;
 let result;
 
@@ -29,10 +29,18 @@ numberButtons.forEach((button) => {
 const operatorButtons = document.querySelectorAll(".operator");
 operatorButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    firstNumber = displayValue;
-    displayValue = "";
-    display.textContent = displayValue;
-    operator = `${button.value}`;
+    if (operator != "") {                         // conditional statement to available chain evaluation, need to refactor (I don't like how I did it)
+      secondNumber = displayValue;
+      operate(firstNumber, secondNumber, operator);
+      firstNumber = displayValue;
+      displayValue = '';
+      operator = button.value;
+    } else {
+      firstNumber = displayValue;
+      displayValue = "";
+      display.textContent = displayValue;
+      operator = button.value;
+    }
   });
 });
 
@@ -52,7 +60,7 @@ function checkCorrectValue() {
 function displayResult() {
   displayValue = result;
   display.textContent = displayValue;
-  operator = '';
+  operator = "";
 }
 
 function reset() {
