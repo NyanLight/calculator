@@ -10,21 +10,15 @@ let display = document.querySelector("#display");
 const cancelButton = document.querySelector("#cButton");
 const cancelEntryButton = document.querySelector("#ceButton");
 
-const plusButton = document.querySelector("#plusButton");
-const minusButton = document.querySelector("#minusButton");
-const multiplyButton = document.querySelector("#multiplyButton");
-const divideButton = document.querySelector("#divideButton");
-
-const operatorButtons = document.querySelectorAll('.operator');
+const operatorButtons = document.querySelectorAll(".operator");
 operatorButtons.forEach((button) => {
-  button.addEventListener('click', () => {
+  button.addEventListener("click", () => {
     firstNumber = displayValue;
-    displayValue = '';
+    displayValue = "";
     display.textContent = displayValue;
     operator = `${button.value}`;
-  })
-})
-
+  });
+});
 
 const numberButtons = document.querySelectorAll(".numbers");
 numberButtons.forEach((button) => {
@@ -76,4 +70,3 @@ function operate(firstNumber, secondNumber, operator) {
       alert("Wrong expression");
   }
 }
-
