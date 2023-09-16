@@ -29,7 +29,6 @@ numberButtons.forEach((button) => {
 const operatorButtons = document.querySelectorAll(".operator");
 operatorButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    if()
     firstNumber = displayValue;
     displayValue = "";
     display.textContent = displayValue;
