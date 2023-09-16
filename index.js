@@ -15,6 +15,17 @@ const minusButton = document.querySelector("#minusButton");
 const multiplyButton = document.querySelector("#multiplyButton");
 const divideButton = document.querySelector("#divideButton");
 
+const operatorButtons = document.querySelectorAll('.operator');
+operatorButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    firstNumber = displayValue;
+    displayValue = '';
+    display.textContent = displayValue;
+    operator = `${button.value}`;
+  })
+})
+
+
 const numberButtons = document.querySelectorAll(".numbers");
 numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -65,3 +76,4 @@ function operate(firstNumber, secondNumber, operator) {
       alert("Wrong expression");
   }
 }
+
