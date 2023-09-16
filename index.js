@@ -4,11 +4,21 @@ let firstNumber;
 let secondNumber;
 let operator;
 let displayValue = 0;
+let result; 
 
 let display = document.querySelector("#display");
 
 const cancelButton = document.querySelector("#cButton");
 const cancelEntryButton = document.querySelector("#ceButton");
+
+const numberButtons = document.querySelectorAll(".numbers");
+numberButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    checkZero();
+    displayValue += `${button.value}`;
+    display.textContent = displayValue;
+  });
+});
 
 const operatorButtons = document.querySelectorAll(".operator");
 operatorButtons.forEach((button) => {
@@ -20,14 +30,11 @@ operatorButtons.forEach((button) => {
   });
 });
 
-const numberButtons = document.querySelectorAll(".numbers");
-numberButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    checkZero();
-    displayValue += `${button.value}`;
-    display.textContent = displayValue;
-  });
-});
+const equelButton = document.querySelector('#equalButton');
+equelButton.addEventListener('click', () => {
+  secondNumber = displayValue;
+  operate(firstNumber, secondNumber, operator);
+})
 
 function checkZero() {
   if (displayValue == 0) {
@@ -69,4 +76,6 @@ function operate(firstNumber, secondNumber, operator) {
     default:
       alert("Wrong expression");
   }
+  displayValue = result;
+  display.textContent = displayValue;
 }
