@@ -9,6 +9,12 @@ let result;
 let display = document.querySelector("#display");
 
 const cancelButton = document.querySelector("#cButton");
+cancelButton.addEventListener('click', () => {
+  displayValue = 0;
+  display.textContent = '';
+})
+
+
 const cancelEntryButton = document.querySelector("#ceButton");
 
 const numberButtons = document.querySelectorAll(".numbers");
