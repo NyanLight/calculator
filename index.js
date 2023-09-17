@@ -110,3 +110,14 @@ function operate(firstNumber, secondNumber, operator) {
       reset();
   }
 }
+
+window.addEventListener('keydown', (e) => {
+  const button = document.querySelector(`button[data-key='${e.key}']`);
+  if (!button) return;
+  button.click(); 
+});
+
+window.addEventListener('keydown', (e) => {
+  const enterKey = document.querySelector(`button[data-key='=']`)
+  if (e.key == 'Enter') enterKey.click();  
+})
