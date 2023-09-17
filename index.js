@@ -121,3 +121,11 @@ window.addEventListener('keydown', (e) => {
   const enterKey = document.querySelector(`button[data-key='=']`)
   if (e.key == 'Enter') enterKey.click();  
 })
+
+window.addEventListener('keydown', (e) => {
+  if (e.key == 'Backspace') {
+    const displayString = displayValue.toString().slice(0, -1);
+    displayValue = +displayString;
+    display.textContent = displayValue;  
+  }
+})
