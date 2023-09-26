@@ -26,14 +26,26 @@ numberButtons.forEach((button) => {
   });
 });
 
+const periodButton = document.querySelector("#periodButton");
+periodButton.addEventListener("click", () => {
+  checkCorrectValue();
+  const regex = /[.]/g;
+  if (displayValue.match(regex)) {
+    return;
+  } else {
+    displayValue += `${periodButton.value}`;
+    display.textContent = displayValue;
+  }
+});
+
 const operatorButtons = document.querySelectorAll(".operator");
 operatorButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    if (operator != "") {                         // conditional statement to available chain evaluation, need to refactor (I don't like how I did it)
+    if (operator != "") {
       secondNumber = displayValue;
       operate(firstNumber, secondNumber, operator);
       firstNumber = displayValue;
-      displayValue = '';
+      displayValue = "";
       operator = button.value;
     } else {
       firstNumber = displayValue;
@@ -111,21 +123,21 @@ function operate(firstNumber, secondNumber, operator) {
   }
 }
 
-window.addEventListener('keydown', (e) => {
+window.addEventListener("keydown", (e) => {
   const button = document.querySelector(`button[data-key='${e.key}']`);
   if (!button) return;
-  button.click(); 
+  button.click();
 });
 
-window.addEventListener('keydown', (e) => {
-  const enterKey = document.querySelector(`button[data-key='=']`)
-  if (e.key == 'Enter') enterKey.click();  
-})
+window.addEventListener("keydown", (e) => {
+  const enterKey = document.querySelector(`button[data-key='=']`);
+  if (e.key == "Enter") enterKey.click();
+});
 
-window.addEventListener('keydown', (e) => {
-  if (e.key == 'Backspace') {
+window.addEventListener("keydown", (e) => {
+  if (e.key == "Backspace") {
     const displayString = displayValue.toString().slice(0, -1);
     displayValue = +displayString;
-    display.textContent = displayValue;  
+    display.textContent = displayValue;
   }
-})
+});
