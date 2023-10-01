@@ -2,7 +2,7 @@
 
 let firstNumber;
 let secondNumber;
-let operator = "";
+let operator;
 let displayValue = 0;
 let result;
 
@@ -14,7 +14,7 @@ cancelButton.addEventListener("click", reset);
 const cancelEntryButton = document.querySelector("#ceButton");
 cancelEntryButton.addEventListener("click", () => {
   displayValue = 0;
-  display.textContent = displayValue;
+  updateDisplay();
 });
 
 const numberButtons = document.querySelectorAll(".numbers");
@@ -22,7 +22,7 @@ numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
     checkCorrectValue();
     displayValue += `${button.value}`;
-    display.textContent = displayValue;
+    updateDisplay();
   });
 });
 
@@ -34,7 +34,7 @@ periodButton.addEventListener("click", () => {
     return;
   } else {
     displayValue += `${periodButton.value}`;
-    display.textContent = displayValue;
+    updateDisplay();
   }
 });
 
@@ -50,7 +50,7 @@ operatorButtons.forEach((button) => {
     } else {
       firstNumber = displayValue;
       displayValue = "";
-      display.textContent = displayValue;
+      updateDisplay();
       operator = button.value;
     }
   });
@@ -69,15 +69,19 @@ function checkCorrectValue() {
   return;
 }
 
+function updateDisplay() {
+  display.textContent = displayValue;
+}
+
 function displayResult() {
   displayValue = result;
-  display.textContent = displayValue;
+  updateDisplay();
   operator = "";
 }
 
 function reset() {
   displayValue = 0;
-  display.textContent = displayValue;
+  updateDisplay();
   firstNumber = "";
   secondNumber = "";
   operator = "";
@@ -130,14 +134,13 @@ window.addEventListener("keydown", (e) => {
 });
 
 window.addEventListener("keydown", (e) => {
-  const enterKey = document.querySelector(`button[data-key='=']`);
-  if (e.key == "Enter") enterKey.click();
+  if (e.key == "Enter") equelButton.click();
 });
 
 window.addEventListener("keydown", (e) => {
   if (e.key == "Backspace") {
     const displayString = displayValue.toString().slice(0, -1);
     displayValue = +displayString;
-    display.textContent = displayValue;
+    updateDisplay();
   }
 });

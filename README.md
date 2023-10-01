@@ -1,6 +1,6 @@
 # THE CALCULATOR
 
-This is the calculator web app built in vanilla HTML/CSS/JS made by me. 
+This is the calculator web app built in vanilla HTML/CSS/JS by me. 
 
 ## Key features
 
