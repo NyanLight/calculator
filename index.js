@@ -87,6 +87,10 @@ function reset() {
   operator = "";
 }
 
+function roundResult() {
+  result = (Math.round(result * 1000))/1000;
+}
+
 function add(firstNumber, secondNumber) {
   result = +firstNumber + +secondNumber;
 }
@@ -107,18 +111,22 @@ function operate(firstNumber, secondNumber, operator) {
   switch (operator) {
     case "+":
       add(firstNumber, secondNumber);
+      roundResult();
       displayResult();
       break;
     case "-":
       subtract(firstNumber, secondNumber);
+      roundResult();
       displayResult();
       break;
     case "*":
       multiply(firstNumber, secondNumber);
+      roundResult();
       displayResult();
       break;
     case "/":
       divide(firstNumber, secondNumber);
+      roundResult();
       displayResult();
       break;
     default:
