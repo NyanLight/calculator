@@ -25,6 +25,7 @@ main {
     background-color: grey;
     font-family: 'Orbitron', sans-serif;
     padding: 0.7rem;
+    border-radius: 8px;
 }
 
 #display{
@@ -36,7 +37,6 @@ main {
     text-align: right;
     margin-bottom: 1rem;
     overflow: hidden;
-    direction: rtl;
 }
 
 footer{
