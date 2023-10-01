@@ -35,6 +35,8 @@ main {
     padding: 1rem;
     text-align: right;
     margin-bottom: 1rem;
+    overflow: hidden;
+    direction: rtl;
 }
 
 footer{
